@@ -6,8 +6,7 @@ const logger = require('morgan');
 const cors = require('cors');
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
-const songsRouter = require('./controllers/songs');
-const trackRouter = require('./controllers/songs');
+const tracksRouter = require('./controllers/tracks');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -26,7 +25,7 @@ mongoose.connection.on('connected', () => {
 });
 
 // Routers
-app.use('/api/songs', songsRouter);
+app.use('/tracks', tracksRouter);
 
 
 // Error Handling
